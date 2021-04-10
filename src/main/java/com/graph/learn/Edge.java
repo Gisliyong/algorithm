@@ -1,4 +1,4 @@
-package com.learn.algorithm.graph.learn;
+package com.graph.learn;
 
 public class Edge {
 	public int weight;

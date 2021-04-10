@@ -1,4 +1,4 @@
-package com.learn.algorithm.graph.learn;
+package com.graph.learn;
 
 import java.util.HashMap;
 import java.util.HashSet;
