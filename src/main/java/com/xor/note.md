@@ -136,3 +136,5 @@ a ^= b;</br>
 如：long a=123；int b=1；计算a& b。</br>
 如：long a=123；int b=-1；计算a& b。</br>
 如：long a=123；unsigned intb=1；计算a & b。
+
+原文链接：https://www.runoob.com/w3cnote/bit-operation.html
