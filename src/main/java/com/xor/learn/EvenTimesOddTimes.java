@@ -11,6 +11,21 @@ public class EvenTimesOddTimes {
         }
         return xor;
     }
+    public static void printTwoOddsNum(int[] arr) {
+        int xor = 0;
+        for (int i = 0; i < arr.length; i++) {
+            xor ^= arr[i];
+        }
+        int rightOne = xor & (~xor + 1);
+        int onlyOne = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if ((arr[i] & rightOne) != 0) {
+                onlyOne ^= arr[i];
+            }
+        }
+        System.out.println("the first is :" + onlyOne + " the second is :" + (xor ^ onlyOne));
+    }
+
     public static int countOdd(int[] arr) {
         if (arr.length == 0) {
             return -1;
