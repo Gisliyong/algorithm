@@ -28,5 +28,4 @@ public class GraphGenerator {
 		}
 		return graph;
 	}
-
 }

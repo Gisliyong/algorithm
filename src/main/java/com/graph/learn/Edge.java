@@ -1,5 +1,7 @@
 package com.graph.learn;
-
+/**
+ * 边描述
+ **/
 public class Edge {
 	public int weight;
 	public Node from;

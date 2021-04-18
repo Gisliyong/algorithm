@@ -2,7 +2,9 @@ package com.graph.learn;
 
 import java.util.HashSet;
 import java.util.Stack;
-
+/**
+ * 图的深度优先遍历
+ **/
 public class DFS {
 	public static void dfs(Node node) {
 		if (node == null) {
@@ -14,6 +16,7 @@ public class DFS {
 		set.add(node);
 		System.out.println(node.value);
 		while (!stack.isEmpty()) {
+			// 栈中永远保存的是目前的路径
 			Node cur = stack.pop();
 			for (Node next : cur.nexts) {
 				if (!set.contains(next)) {
