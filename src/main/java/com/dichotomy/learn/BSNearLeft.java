@@ -1,8 +1,13 @@
-package com.search;
+package com.dichotomy.learn;
 
 import java.util.Arrays;
-
+/**
+ * 找到大于等于value的最左位置
+ **/
 public class BSNearLeft {
+    /**
+     * 二分到底，返回最后的位置
+     **/
     public static int nearleft(int[] arr, int value) {
         if (arr.length == 0 || arr == null) {
             return -1;
@@ -12,6 +17,8 @@ public class BSNearLeft {
         int mid;
         int index = -1;
         while (L <= R) {
+            // int mid = (L + R) / 2
+            // 防止溢出采用下面的写法
             mid = L + ((R - L) >> 1);
             if (arr[mid] >= value) {
                 index = mid;

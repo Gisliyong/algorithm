@@ -46,6 +46,9 @@ public class InsertSort {
         }
         return true;
     }
+    /**
+     * 当前位置比前面一个大，则交换
+     **/
     public static void insertSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             for (int j = i; j > 0 && arr[j] < arr[j - 1]; j--) {

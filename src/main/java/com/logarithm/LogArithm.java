@@ -1,34 +1,16 @@
-package com.sort.learn;;
+package com.logarithm;
+
 import java.util.Arrays;
 
-public class SelectionSort {
-    /**
-     * @Description 打印数组
-     * @Param arr
-     * @return void
-     **/
-    public static void printArray(int[] arr) {
-        for (int i = 0; i  < arr.length; i++) {
-            System.out.println(" " + arr[i]);
-        }
-    }
+/**
+ * 对数器
+ * 先写一个暴力的方法（保证对），再写一个优秀的方法，测试你的优秀算法是否正确。
+ **/
+public class LogArithm {
     public static void swap(int[] arr, int i, int j) {
-        int temp;
-        temp = arr[i];
+        int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    }
-    public static void selectSort(int[] arr) {
-        int minIndex;
-        for (int i = 0; i < arr.length - 1; i++) {
-            minIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[minIndex] > arr[j]) {
-                    minIndex = j;
-                }
-            }
-            swap(arr,i,minIndex);
-        }
     }
     public static int[] generator(int maxValue, int maxSize) {
         int size = (int) (Math.random() * maxValue);
@@ -68,6 +50,16 @@ public class SelectionSort {
         }
         return true;
     }
+    /**
+     * 当前位置比前面一个大，则交换
+     **/
+    public static void insertSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i; j > 0 && arr[j] < arr[j - 1]; j--) {
+                swap(arr, j, j -1);
+            }
+        }
+    }
     public static void main(String[] args) {
         int maxValue = 1000;
         int testTime = 100000;
@@ -76,7 +68,7 @@ public class SelectionSort {
             int[] arr1 = generator(maxValue, maxSize);
             int[] arr2 = copyArray(arr1);
             comparator(arr1);
-            selectSort(arr2);
+            insertSort(arr2);
             if (!isEqual(arr1, arr2)) {
                 System.out.println("error!");
             }

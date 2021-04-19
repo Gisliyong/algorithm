@@ -1,7 +1,9 @@
-package com.search;
+package com.dichotomy.learn;
 
 import java.util.Arrays;
-
+/**
+ * 查找某个元素是否存在
+ **/
 public class BSExist {
     public static boolean isExist(int arr[], int value) {
         if (arr.length == 0 || arr == null) {
