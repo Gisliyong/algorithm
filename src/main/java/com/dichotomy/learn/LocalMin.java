@@ -11,7 +11,7 @@ public class LocalMin {
      * 4 非边界则需要比左右都小的数为局部最小
      * 5 找到任意一个局部最小返回
      **/
-    public static
+    public static void f() {}
     public static void main(String[] args) {
 
     }

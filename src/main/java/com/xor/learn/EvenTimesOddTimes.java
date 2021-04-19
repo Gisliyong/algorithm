@@ -1,6 +1,11 @@
 package com.xor.learn;
-
+/**
+ * 找出现奇数次的数
+ **/
 public class EvenTimesOddTimes {
+    /**
+     * 一种数出现奇数次，其它数据出现偶数次
+     **/
     public static int printOddNum(int[] arr) {
         if (arr.length == 0) {
             return -1;
@@ -11,11 +16,16 @@ public class EvenTimesOddTimes {
         }
         return xor;
     }
+    /**
+     * 两种数出现奇数次，其它数出现偶数次
+     **/
     public static void printTwoOddsNum(int[] arr) {
         int xor = 0;
         for (int i = 0; i < arr.length; i++) {
             xor ^= arr[i];
         }
+        // 提取最右侧的1
+        // 等同于 xor & (-xor)
         int rightOne = xor & (~xor + 1);
         int onlyOne = 0;
         for (int i = 0; i < arr.length; i++) {
