@@ -1,4 +1,8 @@
 package com.xor.learn;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 找出现奇数次的数
  **/
@@ -35,7 +39,54 @@ public class EvenTimesOddTimes {
         }
         System.out.println("the first is :" + onlyOne + " the second is :" + (xor ^ onlyOne));
     }
-
+    /**
+     * 一个数组，一个数出现K次，其它数出现M次，K < M
+     * 要求：
+     * 时间复杂度为O(N),额外空间复杂度为O(1)
+     * 思路：
+     * 将每个数转换为二进制
+     * 准备一个数组将每个数字的二进制位累加到一起
+     * 该数字 % M == 0，说明另出现K次的数在这个位上一定0
+     **/
+     public static int onlyKtimes(int[] arr, int k, int m) {
+         // 准备一个长度为32的数组
+         int[] t = new int[32];
+         // t[0] 0位上出现了几个1
+         // t[i] i位上出现了几个1
+         for (int num : arr) {
+             for (int i = 31; i >= 0; i--) {
+                 // 等价于num & (1 << i)
+                 t[i] += (num >> i) & 1;
+             }
+         }
+         int ans = 0;
+         for (int i = 0; i < 32; i++) {
+             if(t[i] % m != 0) {
+                 // 数字在第i位有1
+                 ans |= (1 << i);
+             }
+         }
+       return ans;
+     }
+     /**
+      * onlyKeyTimes的对数器
+      **/
+    public static int testOnlyKeyTimes(int arr[],int k) {
+        Map<Integer,Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (!map.containsKey(arr[i])) {
+                map.put(arr[i],1);
+            } else {
+                map.put(arr[i],map.get(arr[i]) + 1);
+            }
+        }
+        for (int num : map.keySet()) {
+            if (k == map.get(num)) {
+                return num;
+            }
+        }
+        return -1;
+    }
     public static int countOdd(int[] arr) {
         if (arr.length == 0) {
             return -1;
@@ -78,16 +129,20 @@ public class EvenTimesOddTimes {
         }
     }
     public static void main(String[] args) {
-        int testTime = 10000000;
-       int maxValue = 1000;
-       int maxSize = 1000;
-        for (int i = 0; i < testTime; i++) {
-            int[] arr = generator(maxValue,maxSize);
-            if (countOdd(arr) != printOddNum(arr)) {
-                printArray(arr);
-                System.out.println("error!");
-            }
-        }
-        System.out.println("finsh!");
+         int[] arr = {-4,3,1,3,3,1,1,-4};
+        int re = onlyKtimes(arr, 2, 3);
+        int i = testOnlyKeyTimes(arr, 2);
+        System.out.printf(re + " " + i);
+//        int testTime = 10000000;
+//       int maxValue = 1000;
+//       int maxSize = 1000;
+//        for (int i = 0; i < testTime; i++) {
+//            int[] arr = generator(maxValue,maxSize);
+//            if (countOdd(arr) != printOddNum(arr)) {
+//                printArray(arr);
+//                System.out.println("error!");
+//            }
+//        }
+//        System.out.println("finsh!");
     }
 }
