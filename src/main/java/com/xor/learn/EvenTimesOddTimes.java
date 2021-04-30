@@ -46,7 +46,7 @@ public class EvenTimesOddTimes {
      * 思路：
      * 将每个数转换为二进制
      * 准备一个数组将每个数字的二进制位累加到一起
-     * 该数字 % M == 0，说明另出现K次的数在这个位上一定0
+     * 该数字 % M == 0，说明出现K次的数在这个位上一定0
      **/
      public static int onlyKtimes(int[] arr, int k, int m) {
          // 准备一个长度为32的数组
@@ -68,6 +68,7 @@ public class EvenTimesOddTimes {
          }
        return ans;
      }
+
      /**
       * onlyKeyTimes的对数器
       **/

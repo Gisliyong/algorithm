@@ -1,5 +1,7 @@
 package com.sort.learn;
 
+import com.sort.practice.Test;
+
 import java.util.Arrays;
 
 public class BubbleSort {
@@ -63,7 +65,7 @@ public class BubbleSort {
             int[] arr1 = generator(maxValue, maxSize);
             int[] arr2 = copyArray(arr1);
             comparator(arr1);
-            bubbleSort(arr2);
+            Test.insertSort(arr2);
             if (!isEqual(arr1, arr2)) {
                 System.out.println("error!");
             }

@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReverseList {
+    /**
+     * 反转链表
+     **/
     public static Node reverse(Node head) {
         if (head == null || head.next == null) {
             return head;
@@ -74,9 +77,7 @@ public class ReverseList {
         int testTime = 5;
         for (int i = 0; i < testTime; i++) {
             Node head = generator(maxValue,maxSize);
-
             Node one = reverse(head);
-
             Node two = logOfReverse(one);
             pirntList(head);
             pirntList(one);

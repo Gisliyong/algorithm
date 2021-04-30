@@ -48,6 +48,7 @@ public class InsertSort {
     }
     /**
      * 当前位置比前面一个大，则交换
+     *  插入排序，时间复杂度是与数据的状态有关的，最好O(n),最坏O(n^2)
      **/
     public static void insertSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {

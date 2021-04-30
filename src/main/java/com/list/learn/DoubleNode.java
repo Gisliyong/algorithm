@@ -1,5 +1,7 @@
 package com.list.learn;
-
+/**
+ * 双链表
+ **/
 public class DoubleNode {
     int value;
     DoubleNode pre;
