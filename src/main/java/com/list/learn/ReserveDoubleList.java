@@ -3,6 +3,8 @@ package com.list.learn;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.list.practice.Test.reverseDoubleList;
+
 public class ReserveDoubleList {
     public static DoubleNode reverList(DoubleNode head) {
         DoubleNode pre = null;
@@ -97,7 +99,7 @@ public class ReserveDoubleList {
         int testTime = 100000;
         for (int i = 0; i < testTime; i++) {
             DoubleNode node2 = generator(len, value);
-            DoubleNode reverse2 = reverList(node2);
+            DoubleNode reverse2 = reverseDoubleList(node2);
             DoubleNode back2 = logOfreverse(reverse2);
             if (!checkDoubleListEqual(node2, back2)) {
                 System.out.println("oops!");

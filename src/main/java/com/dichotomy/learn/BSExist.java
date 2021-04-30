@@ -14,6 +14,7 @@ public class BSExist {
         int mid;
         // 等号可以用，也可以不用
         // 如果不使用等号，最后的返回值 return arr[low] == value
+        // while l < r
         while (L <= R) {
             // 防止溢出
             mid = L + ((R - L) >> 1);
@@ -25,6 +26,7 @@ public class BSExist {
                 R = mid - 1;
             }
         }
+        // return arr[l] == value
         return false;
     }
 

@@ -40,7 +40,7 @@ public class EvenTimesOddTimes {
         System.out.println("the first is :" + onlyOne + " the second is :" + (xor ^ onlyOne));
     }
     /**
-     * 一个数组，一个数出现K次，其它数出现M次，K < M
+     * 一个数组，一个数出现K次，其它数出现M次，K < M,M > 1
      * 要求：
      * 时间复杂度为O(N),额外空间复杂度为O(1)
      * 思路：

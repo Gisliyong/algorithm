@@ -5,6 +5,7 @@ package com.xor.learn;
 public class Swap {
     /**
      * 需要注意此交换需要a与b不指向同一个地址
+     * 如果两个位置相同，则结果变成0
      **/
     public static void swap(int a,int b) {
         System.out.println("a:" + a + " " + "b:" + b);
