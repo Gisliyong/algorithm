@@ -12,7 +12,10 @@ public class BSExist {
         int L = 0;
         int R = arr.length - 1;
         int mid;
+        // 等号可以用，也可以不用
+        // 如果不使用等号，最后的返回值 return arr[low] == value
         while (L <= R) {
+            // 防止溢出
             mid = L + ((R - L) >> 1);
             if (arr[mid] == value) {
                 return true;
