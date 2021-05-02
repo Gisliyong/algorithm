@@ -1,6 +1,5 @@
 package com.queue.learn;
 
-import org.apache.coyote.http11.filters.IdentityOutputFilter;
 
 /**
  * 数组实现队列

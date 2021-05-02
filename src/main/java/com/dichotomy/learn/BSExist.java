@@ -63,6 +63,5 @@ public class BSExist {
             }
         }
         System.out.println("finsh!");
-
     }
 }
