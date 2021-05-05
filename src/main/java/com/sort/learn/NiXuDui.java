@@ -67,10 +67,6 @@ public class NiXuDui {
         return  process(arr, L, mid) + process(arr, mid + 1, R) + merge(arr, L, mid, R);
     }
 
-    /**
-     * arr num的右边*2 < num 的个数
-     */
-
     public static void main(String[] args) {
 
     }
