@@ -15,7 +15,7 @@ package com.sort.learn;
 public class MinSum {
     /**
      * 思路：
-     * 相等时，先拷贝左边
+     * 相等时，先拷贝右边
      * 拷贝右组数时不产生小和，左组拷贝产生小和
      */
     private static int sum = 0;
