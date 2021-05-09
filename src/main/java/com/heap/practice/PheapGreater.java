@@ -1,46 +1,27 @@
-package com.heap.learn;
+package com.heap.practice;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 
-/**
- * T如果为基础类型可能会有问题。
- */
-
-public class HeapGreater <T>{
-    private ArrayList<T> heap;
-    private HashMap<T, Integer> indexMap;
-    private int heapSize;
-    private Comparator<? super T> comp;
-    public HeapGreater(Comparator<T> c) {
-        heap = new ArrayList<>();
-        indexMap = new HashMap<>();
-        heapSize = 0;
-        comp = c;
+public class PheapGreater<T> {
+    public  ArrayList<T> heap;
+    public  HashMap<T,Integer> indexMap;
+    public int heapSize;
+    public Comparator<T> comp;
+    public PheapGreater(int size,Comparator comparator) {
+        this.heapSize = size;
+        this.comp = comparator;
     }
-
     public boolean isEmpty() {
         return heapSize == 0;
     }
-
-    public int size() {
-        return heapSize;
+    public int getHeapSize() {
+        return this.heapSize;
     }
-
-    public boolean contains(T obj) {
-        return indexMap.containsKey(obj);
-    }
-
-    public T peek() {
-        return heap.get(0);
-    }
-
-    public void push(T obj) {
-        heap.add(obj);
-        indexMap.put(obj, heapSize);
-        heapInsert(heapSize++);
+    public void resign(T value) {
+        heapInsert(indexMap.get(value));
+        heapify(indexMap.get(value));
     }
 
     public T pop() {
@@ -63,21 +44,11 @@ public class HeapGreater <T>{
             resign(replace);
         }
     }
-    // 改变某个值，重新调整为堆
-    public void resign(T obj) {
-        heapInsert(indexMap.get(obj));
-        heapify(indexMap.get(obj));
+    public void push(T value) {
+        heap.add(value);
+        indexMap.put(value, heapSize);
+        heapInsert(heapSize++);
     }
-
-    // 请返回堆上的所有元素
-    public List<T> getAllElements() {
-        List<T> ans = new ArrayList<>();
-        for (T c : heap) {
-            ans.add(c);
-        }
-        return ans;
-    }
-
     private void heapInsert(int index) {
         while (comp.compare(heap.get(index), heap.get((index - 1) / 2)) < 0) {
             swap(index, (index - 1) / 2);
@@ -98,7 +69,6 @@ public class HeapGreater <T>{
             left = index * 2 + 1;
         }
     }
-
     private void swap(int i, int j) {
         T o1 = heap.get(i);
         T o2 = heap.get(j);
@@ -107,4 +77,5 @@ public class HeapGreater <T>{
         indexMap.put(o2, i);
         indexMap.put(o1, j);
     }
+
 }

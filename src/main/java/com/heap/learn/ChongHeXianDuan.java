@@ -1,5 +1,7 @@
 package com.heap.learn;
 
+import com.heap.practice.PracticeChongheXianDuan;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -107,7 +109,7 @@ public class ChongHeXianDuan {
         for (int i = 0; i < testTime; i++) {
             int data[][] = generateLines(N, L, R);
             int ans1 = coverMaxHeap(data);
-            int ans2 = maxConver(data);
+            int ans2 = PracticeChongheXianDuan.maxCover(data);
             if (ans1 != ans2) {
                 System.out.println("Oops!");
                 break;
