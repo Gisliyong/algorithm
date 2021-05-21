@@ -66,8 +66,6 @@ public class MinSum {
     }
 
      public static void main(String[] args) {
-         getMinSum();
-         System.out.println("\n");
-         System.out.println(sum);
+         System.out.println( null == null);
      }
 }
